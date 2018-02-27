@@ -13,7 +13,7 @@ import uk.ac.tees.q5113445live.enterpriseproject2.dummy.DummyContent;
 
 public class Delivery
 {
-    private String deliveryType;
+    private String name;
     private String collect;
     private String deliver;
     private String pay;
@@ -27,10 +27,20 @@ public class Delivery
     {
 
     }
-
-    Delivery(String a, String b, String c, String d, String e, String f)
+    Delivery(String name)
     {
-        this.deliveryType = a;
+        this.name = name;
+        this.collect = "";
+        this.deliver = "";
+        this.pay = "";
+        this.weight = "";
+        this.size = "";
+
+    }
+
+    Delivery(String name, String b, String c, String d, String e, String f)
+    {
+        this.name = name;
         this.collect = b;
         this.deliver = f;
         this.pay = c;
@@ -39,11 +49,11 @@ public class Delivery
 
     }
     public String getDeliveryType() {
-        return deliveryType;
+        return name;
     }
 
     public void setDeliveryType(String deliveryType) {
-        this.deliveryType = deliveryType;
+        this.name = deliveryType;
     }
 
     public String getCollect() {return collect;    }
