@@ -11,8 +11,7 @@ import java.util.Map;
  * <p>
  * TODO: Replace all uses of this class before publishing your app.
  */
-public class DummyContent
-{
+public class DummyContent {
 
     /**
      * An array of sample (dummy) items.
@@ -26,8 +25,7 @@ public class DummyContent
 
     private static final int COUNT = 25;
 
-    static
-    {
+    static {
         // Add some sample items.
         for (int i = 1; i <= COUNT; i++) {
             addItem(createDummyItem(i));
@@ -39,13 +37,11 @@ public class DummyContent
         ITEM_MAP.put(item.id, item);
     }
 
-    private static DummyItem createDummyItem(int position)
-    {
+    private static DummyItem createDummyItem(int position) {
         return new DummyItem(String.valueOf(position), "Item " + position, makeDetails(position));
     }
 
-    private static String makeDetails(int position)
-    {
+    private static String makeDetails(int position) {
         StringBuilder builder = new StringBuilder();
         builder.append("Details about Item: ").append(position);
         for (int i = 0; i < position; i++) {
@@ -69,8 +65,7 @@ public class DummyContent
         }
 
         @Override
-        public String toString()
-        {
+        public String toString() {
             return content;
         }
     }

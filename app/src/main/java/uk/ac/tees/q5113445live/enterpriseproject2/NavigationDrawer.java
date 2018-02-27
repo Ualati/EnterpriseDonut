@@ -30,14 +30,11 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
 
-import uk.ac.tees.q5113445live.enterpriseproject2.dummy.DummyContent;
-
 public class NavigationDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         HomeFragment.OnFragmentInteractionListener,
         AdvertiseFragment.OnFragmentInteractionListener,
-        DetailsFragment.OnFragmentInteractionListener,
-        ItemFragment.OnListFragmentInteractionListener
+        DetailsFragment.OnFragmentInteractionListener
 {
 
     private DatabaseReference mDatabase;
@@ -201,11 +198,4 @@ public class NavigationDrawer extends AppCompatActivity
                 .into(imageView);
     }
 
-
-
-    @Override
-    public void onListFragmentInteraction(Delivery item)
-    {
-        getSupportActionBar().setTitle(item.toString());
-    }
 }
