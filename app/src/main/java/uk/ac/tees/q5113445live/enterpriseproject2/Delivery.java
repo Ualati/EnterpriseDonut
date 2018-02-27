@@ -1,5 +1,12 @@
 package uk.ac.tees.q5113445live.enterpriseproject2;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import uk.ac.tees.q5113445live.enterpriseproject2.dummy.DummyContent;
+
 /**
  * Created by arsen on 16/02/2018.
  */
@@ -12,6 +19,8 @@ public class Delivery
     private String pay;
     private String weight;
     private String size;
+    public static final List<Delivery> ITEMS = new ArrayList<Delivery>();
+    public static final Map<String, Delivery> ITEM_MAP = new HashMap<String, Delivery>();
 
     //Need variables for delivered from, delivered to
     Delivery()
