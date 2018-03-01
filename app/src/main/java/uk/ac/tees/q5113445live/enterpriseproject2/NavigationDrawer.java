@@ -30,11 +30,14 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
 
+import uk.ac.tees.q5113445live.enterpriseproject2.dummy.DummyContent;
+
 public class NavigationDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         HomeFragment.OnFragmentInteractionListener,
         AdvertiseFragment.OnFragmentInteractionListener,
-        DetailsFragment.OnFragmentInteractionListener
+        DetailsFragment.OnFragmentInteractionListener,
+        ItemFragment.OnListFragmentInteractionListener
 {
 
     private DatabaseReference mDatabase;
@@ -134,7 +137,7 @@ public class NavigationDrawer extends AppCompatActivity
         }
         else if (id == R.id.nav_advertised)
         {
-            //fragment = new ItemFragment();
+            fragment = new ItemFragment();
         }
 
         //NOTE: Fragment changing code
@@ -196,5 +199,11 @@ public class NavigationDrawer extends AppCompatActivity
                 .using(new FirebaseImageLoader())
                 .load(mStorageRef)
                 .into(imageView);
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item)
+    {
+        getSupportActionBar().setTitle(item.toString());
     }
 }

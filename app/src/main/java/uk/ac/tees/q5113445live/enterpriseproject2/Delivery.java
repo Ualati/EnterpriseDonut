@@ -1,27 +1,46 @@
 package uk.ac.tees.q5113445live.enterpriseproject2;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import uk.ac.tees.q5113445live.enterpriseproject2.dummy.DummyContent;
+
 /**
  * Created by arsen on 16/02/2018.
  */
 
 public class Delivery
 {
-    private String deliveryType;
+    private String name;
     private String collect;
     private String deliver;
     private String pay;
     private String weight;
     private String size;
+    public static final List<Delivery> ITEMS = new ArrayList<Delivery>();
+    public static final Map<String, Delivery> ITEM_MAP = new HashMap<String, Delivery>();
 
     //Need variables for delivered from, delivered to
     Delivery()
     {
 
     }
-
-    Delivery(String a, String b, String c, String d, String e, String f)
+    Delivery(String name)
     {
-        this.deliveryType = a;
+        this.name = name;
+        this.collect = "";
+        this.deliver = "";
+        this.pay = "";
+        this.weight = "";
+        this.size = "";
+
+    }
+
+    Delivery(String name, String b, String c, String d, String e, String f)
+    {
+        this.name = name;
         this.collect = b;
         this.deliver = f;
         this.pay = c;
@@ -30,11 +49,11 @@ public class Delivery
 
     }
     public String getDeliveryType() {
-        return deliveryType;
+        return name;
     }
 
     public void setDeliveryType(String deliveryType) {
-        this.deliveryType = deliveryType;
+        this.name = deliveryType;
     }
 
     public String getCollect() {return collect;    }
